@@ -126,44 +126,49 @@ module.exports = {
                                         break;
                                 }
 
+                                var bread;
+
+                                var breadEmbed = new Discord.MessageEmbed()
+                                    .setColor(`#A3641A`)
+                                    .setTimestamp()
+                                    .setFooter(`BreadBot V${pjson.version}`, 'https://cdn.discordapp.com/app-icons/777884542924488715/7ab195239e08e913b4434905a19b94db.png?size=256');
+
                                 switch (code) {
                                     case ("00"):
-                                        var attachment = new Discord.MessageAttachment('./bread/bagel.jpg');
-                                        message.reply('You are a bagel', attachment)
+                                        bread = "Bagel";
                                         break;
                                     case ("01"):
-                                        var attachment = new Discord.MessageAttachment('./bread/baguette.jpg');
-                                        message.reply('You are a baguette', attachment)
+                                        bread = "Baguette";
                                         break;
                                     case ("02"):
-                                        var attachment = new Discord.MessageAttachment('./bread/crossiant.jpg');
-                                        message.reply('You are a crossiant', attachment)
+                                        bread = "Crossiant";
                                         break;
                                     case ("10"):
-                                        var attachment = new Discord.MessageAttachment('./bread/donut.jpg');
-                                        message.reply('You are a donut', attachment)
+                                        bread = "Donut";
                                         break;
                                     case ("11"):
-                                        var attachment = new Discord.MessageAttachment('./bread/hot_dog_bun.jpg');
-                                        message.reply('You are a hot dog bun', attachment)
+                                        bread = "Hot Dog Bun";
                                         break;
                                     case ("12"):
-                                        var attachment = new Discord.MessageAttachment('./bread/pita.jpg');
-                                        message.reply('You are a pita', attachment)
+                                        bread = "Pita";
                                         break;
                                     case ("20"):
-                                        var attachment = new Discord.MessageAttachment('./bread/toast.jpg');
-                                        message.reply('You are toast', attachment)
+                                        bread = "Toast";
                                         break;
                                     case ("21"):
-                                        var attachment = new Discord.MessageAttachment('./bread/wheat_bread.jpg');
-                                        message.reply('You are wheat bread', attachment)
+                                        bread = "Wheat Bread";
                                         break;
                                     case ("22"):
-                                        var attachment = new Discord.MessageAttachment('./bread/white_bread.jpg');
-                                        message.reply('You are white bread', attachment)
+                                        bread = "White Bread";
                                         break;
                                 }
+
+                                const attachment = new Discord.MessageAttachment(`./bread/${bread}.PNG`, `${bread}.PNG`);
+                                breadEmbed.setTitle(`Congratulation, you are ${bread}`)
+                                breadEmbed.attachFiles(attachment)
+                                breadEmbed.setImage(`attachment://${bread}.PNG`);
+
+                                return message.channel.send(breadEmbed)
                             })
                     });
                 })
