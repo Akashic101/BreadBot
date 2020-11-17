@@ -1,12 +1,16 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 
-const { RedditSimple } = require('reddit-simple');
+const {
+    RedditSimple
+} = require('reddit-simple');
 const Discord = require('discord.js');
 const pjson = require(`../package.json`);
 
 module.exports = {
     name: `meme`,
+    modOnly: false,
+    color: `#2153f5`,
     description: `Sends a random meme from reddit`,
     async execute(client, message, args) {
 
