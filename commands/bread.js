@@ -49,25 +49,6 @@ module.exports = {
             .setTimestamp()
             .setFooter(`BreadBot V${pjson.version}`, 'https://cdn.discordapp.com/app-icons/777884542924488715/7ab195239e08e913b4434905a19b94db.png?size=256');
 
-        var embedQuestion3 = new Discord.MessageEmbed()
-            .setColor(`#A3641A`)
-            .setDescription('Do you like bread?')
-            .addFields({
-                name: 'Yes',
-                value: ':one:',
-                inline: true
-            }, {
-                name: 'Yes again',
-                value: ':two:',
-                inline: true
-            }, {
-                name: 'Maybe?',
-                value: '3️⃣',
-                inline: true
-            }, )
-            .setTimestamp()
-            .setFooter(`BreadBot V${pjson.version}`, 'https://cdn.discordapp.com/app-icons/777884542924488715/7ab195239e08e913b4434905a19b94db.png?size=256');
-
         message.channel.send({
             embed: embedQuestion1
         }).then(embedMessage => {
