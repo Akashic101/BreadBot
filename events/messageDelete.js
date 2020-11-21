@@ -38,6 +38,6 @@ module.exports = async (client, message) => {
 			format: `jpg`
 		}));
 	}
-	let log_channel = message.guild.channels.cache.get(channel => channel.id === '777887023876669441')
+	let log_channel = message.guild.channels.cache.get(channel => channel.id === '764316786635046954')
 	return log_channel.send(memberLeftEmbed)
 };

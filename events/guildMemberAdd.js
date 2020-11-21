@@ -30,6 +30,6 @@ module.exports = async (client, member) => {
 		memberJoinedEmbed.setDescription(`**Warning** The account of ${member.user.tag} is only ${Math.ceil(timeDifference)} days old`)
 	}
 
-	let log_channel = message.guild.channels.cache.get(channel => channel.id === '777887023876669441')
+	let log_channel = message.guild.channels.cache.get(channel => channel.id === '764316786635046954')
 	return log_channel.send(memberJoinedEmbed)
 };
