@@ -3,7 +3,7 @@
 const Discord = require(`discord.js`);
 const pjson = require(`../package.json`);
 
-module.exports = async (client, member) => {
+module.exports = async (client, member, message) => {
 
 	var date = new Date();
 
