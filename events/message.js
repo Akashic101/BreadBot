@@ -38,12 +38,16 @@ module.exports = async (client, message) => {
                 name: `Command`,
                 value: message.content
             }, {
+                name: `channel`,
+                value: `<#${message.channel.id}>`
+            }, {
                 name: `Date`,
-                value: date = new Date().toUTCString()
-            })
-            .setThumbnail(message.member.user.displayAvatarURL({
-                format: `jpg`
-            }))
+                value: `${d.getDate()}.${d.getMonth()}.${d.getFullYear()} at ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`
+            }, {
+                name: `link`,
+                value: `https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id}`
+            }
+            )
             .setTimestamp()
             .setFooter(`BreadBot V${pjson.version}`, 'https://cdn.discordapp.com/app-icons/777884542924488715/7ab195239e08e913b4434905a19b94db.png?size=256');
         client.channels.cache.get("764316786635046954").send(serverLogEmbed)
